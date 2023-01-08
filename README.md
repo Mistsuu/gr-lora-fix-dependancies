@@ -68,7 +68,7 @@ although there are some link (i forgot) mention that you can also do this:
 ```
 sudo apt install --reinstall liblog4cpp5v5
 ```
-
+<br>
 
 
 The installation procedure is the same as for any GNU Radio OOT module:
