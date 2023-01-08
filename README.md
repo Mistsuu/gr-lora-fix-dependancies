@@ -53,6 +53,22 @@ See the 'Testing' section below for examples on how to use `gr-lora`.
 
 If you prefer a manual installation, the following dependencies are required: `python2-numpy`, `python2-scipy`, `swig`, `cppunit`, `fftw`, `gnuradio`, `libvolk`, `log4cpp`, `cmake`, `wx`, and [`liquid-dsp`](https://github.com/jgaeddert/liquid-dsp).
 
+Command to install packages on Ubuntu 22.04 *(the list of packages comes from above, and also from my error messages as well. The ones I comment out because without it the program still runs anyways :>)*:
+```
+sudo apt install swig libcppunit-dev gnuradio libvolk2-dev liblog4cpp5-dev liblog4cpp5v5 cmake libliquid-dev libsndfile1-dev # libfftw3-3
+```
+
+#### ⚠️ note:
+If somehow after install the `log4cpp`, you get the message `/usr/bin/ld: cannot find -llog4cpp: No such file or directory` as error, you can try to locate the file `liblog4cpp.so.<version>` at `/usr/lib/x86_64-linux-gnu/` or `<place-where-liblog4cpp.so.<version>-exists>` like that and run this:
+```
+sudo ln -s <place-where-liblog4cpp.so.<version>-exists>/liblog4cpp.so.<version> <place-where-liblog4cpp.so.<version>-exists>/liblog4cpp.so
+```
+
+although there are some link (i forgot) mention that you can also do this:
+```
+sudo apt install --reinstall liblog4cpp5v5
+```
+
 The installation procedure is the same as for any GNU Radio OOT module:
 
 ```
